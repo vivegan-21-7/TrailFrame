@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrailFrame — Visual Discovery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#"><span class="brand-mark">TF</span><span>trailframe<span class="brand-dot">.</span></span></a>
+    <span class="header-note">A little inspiration goes a long way.</span>
+  </header>
+  <main class="page-shell">
+    <section class="hero">
+      <p class="eyebrow"><span class="eyebrow-line"></span> YOUR VISUAL DISCOVERY SPACE</p>
+      <h1>Follow your <em>curiosity.</em></h1>
+      <p class="intro">One idea can lead anywhere. Search a subject and build your next moodboard, one image at a time.</p>
+      <div class="search-panel">
+        <form id="search-form">
+          <label for="topic-input">What would you like to explore?</label>
+          <div class="search-row">
+            <input id="topic-input" name="topic" type="search" placeholder="Try “mountain cabins”..." aria-label="Search image topics">
+            <button id="search-button" type="submit">Search <span aria-hidden="true">↗</span></button>
+          </div>
+        </form>
+        <div class="quick-picks" aria-label="Suggested topics">
+          <span class="quick-picks-label">QUICK PICKS</span>
+          <button class="chip" type="button" data-query="Nature">Nature</button>
+          <button class="chip" type="button" data-query="Architecture">Architecture</button>
+          <button class="chip" type="button" data-query="Street life">Street life</button>
+          <button class="chip" type="button" data-query="Textures">Textures</button>
+        </div>
+      </div>
+    </section>
+    <section class="results-section">
+      <div class="results-topline">
+        <div><p class="section-kicker">THE CANVAS</p><h2>Your discoveries</h2></div>
+        <p id="result-count" class="result-count" aria-live="polite">Search a topic to get started</p>
+      </div>
+      <div id="results" class="results-grid" aria-live="polite"></div>
+      <div id="empty-state" class="empty-state">
+        <div class="empty-art" aria-hidden="true"><span class="art-sun"></span><span class="art-hill art-hill-one"></span><span class="art-hill art-hill-two"></span><span class="art-star">✳</span></div>
+        <h3>Your next idea starts here.</h3>
+        <p>Search for a topic to make room for inspiration. Your image collection will appear in this space.</p>
+      </div>
+    </section>
+    <footer class="site-footer"><span>TRAILFRAME © 2026</span><span>Made for curious minds.</span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
