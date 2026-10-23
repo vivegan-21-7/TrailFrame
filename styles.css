@@ -15,3 +15,36 @@ h1{margin:20px 0 14px;font-size:clamp(43px,7vw,76px);line-height:1.03;letter-spa
 .empty-state{display:flex;min-height:250px;flex-direction:column;align-items:center;justify-content:center;padding:28px 18px;border:1px dashed #cdd8cd;border-radius:16px;text-align:center;background:#fffefa73}.empty-art{position:relative;width:120px;height:76px;margin-bottom:18px;overflow:hidden}.art-sun{position:absolute;top:4px;right:23px;width:28px;height:28px;border-radius:50%;background:var(--peach)}.art-hill{position:absolute;bottom:-23px;width:105px;height:75px;border-radius:45% 55% 0 0;transform:rotate(-14deg)}.art-hill-one{left:-8px;background:#b6cbb4}.art-hill-two{right:-35px;bottom:-31px;background:var(--green);transform:rotate(17deg)}.art-star{position:absolute;top:4px;left:13px;color:var(--green);font-size:17px}.empty-state h3{margin:0 0 8px;font-family:'Playfair Display',serif;font-size:21px}.empty-state p{max-width:370px;margin:0;color:var(--muted);font-size:12px;line-height:1.7}
 .site-footer{display:flex;justify-content:space-between;gap:16px;padding:22px 0 28px;border-top:1px solid var(--line);color:#87938c;font-size:9px;letter-spacing:.11em}[hidden]{display:none!important}
 @media(max-width:600px){.site-header{min-height:68px}.header-note{display:none}.hero{padding-top:54px}.search-panel{padding:17px}.search-row{flex-direction:column}#search-button{min-height:47px}.quick-picks-label{width:100%;margin-bottom:2px}.results-topline{align-items:start;flex-direction:column;gap:9px}.results-grid{grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:12px}.card img{height:160px}.site-footer{font-size:8px}}
+
+
+/* Part 3 polish: visible loading feedback and disabled-button state */
+.loading-indicator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 7px;
+  border: 2px solid #c7d8d0;
+  border-top-color: var(--green);
+  border-radius: 50%;
+  vertical-align: -1px;
+  animation: loading-spin 0.7s linear infinite;
+}
+#search-button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+.card {
+  animation: card-appear 0.35s ease both;
+}
+@keyframes loading-spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes card-appear {
+  from { opacity: 0; transform: translateY(7px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .loading-indicator, .card {
+    animation: none;
+  }
+}
